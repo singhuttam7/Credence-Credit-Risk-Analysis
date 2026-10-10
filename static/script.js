@@ -1,6 +1,26 @@
 "use strict";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+"use strict";
+
+// Automatically support local development and Render deployment.
+const API_BASE_URL = (() => {
+  const isLocalHost = ["localhost", "127.0.0.1"].includes(
+    window.location.hostname,
+  );
+
+  const isLiveServer = isLocalHost && window.location.port === "5500";
+
+  // VS Code Live Server: frontend on port 5500,
+  // FastAPI backend on port 8000.
+  if (isLiveServer) {
+    return "http://127.0.0.1:8000";
+  }
+
+  // FastAPI serves both the frontend and API locally
+  // on port 8000, or on the deployed Render domain.
+  return window.location.origin;
+})();
+
 const API_URL = `${API_BASE_URL}/predict`;
 
 const form = document.getElementById("loanForm");
