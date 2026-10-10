@@ -1,0 +1,749 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#f7f9fc" />
+
+    <meta
+      name="description"
+      content="AI-powered credit risk analysis and loan default probability assessment."
+    />
+
+    <title>Credence — Credit Risk Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <script src="/static/script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Credence home">
+        <span class="brand-mark">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path
+              d="M16 3 27 8v8c0 6.4-4.7 10.9-11 13C9.7 26.9 5 22.4 5 16V8L16 3Z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+
+            <path
+              d="m10 16 4 4 8-9"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+        <span class="brand-name">credence<span>.</span></span>
+      </a>
+
+      <div class="topbar-right">
+        <span class="system-status">
+          <span class="status-dot"></span>
+
+          <span id="connectionText">AI engine ready</span>
+        </span>
+
+        <a class="nav-link" href="#assessment">Assessment</a>
+
+        <a class="nav-cta" href="#assessment"
+          >Analyze application <span>↗</span></a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="hero page-container">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-icon">✳</span>
+
+            INTELLIGENT CREDIT ASSESSMENT
+          </div>
+
+          <h1>
+            Make smarter<br />credit decisions<span class="hero-period">.</span>
+          </h1>
+
+          <p class="hero-description">
+            Understand borrower risk with machine learning. Explore default
+            probabilities and turn applicant data into clearer, data-driven
+            insights.
+          </p>
+
+          <div class="hero-meta">
+            <span><span class="meta-check">✓</span> Model-driven insights</span>
+
+            <span><span class="meta-check">✓</span> Real-time predictions</span>
+          </div>
+        </div>
+
+        <div
+          class="hero-visual reveal"
+          aria-label="Illustration of credit analytics"
+        >
+          <div class="visual-orbit orbit-one"></div>
+
+          <div class="visual-orbit orbit-two"></div>
+
+          <div class="visual-card">
+            <div class="visual-card-top">
+              <span class="visual-label">CREDIT INTELLIGENCE</span>
+
+              <span class="visual-live"><span></span> LIVE</span>
+            </div>
+
+            <div class="visual-shield">
+              <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+                <path
+                  d="M40 8 65 19v19c0 15-10.8 25.5-25 34C25.8 63.5 15 53 15 38V19L40 8Z"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                />
+
+                <path
+                  d="m28 39 8 8 17-18"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <div class="visual-title">Risk intelligence</div>
+
+            <div class="visual-subtitle">
+              From application data to actionable insight.
+            </div>
+
+            <div class="visual-metrics">
+              <div><span>ANALYSIS</span><strong>Automated</strong></div>
+
+              <div><span>OUTPUT</span><strong>Probability</strong></div>
+            </div>
+          </div>
+
+          <div class="floating-note floating-top">
+            <span class="floating-icon">↗</span>
+
+            <div>
+              <strong>Probability-based</strong
+              ><small>Data-informed decisions</small>
+            </div>
+          </div>
+
+          <div class="floating-note floating-bottom">
+            <span class="floating-icon floating-icon-green">✓</span>
+
+            <div>
+              <strong>Instant analysis</strong><small>Results in seconds</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-strip page-container reveal">
+        <div class="stat-item">
+          <div class="stat-icon">◎</div>
+
+          <div>
+            <strong>Probability scoring</strong
+            ><span>Estimate default likelihood</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">⌁</div>
+
+          <div>
+            <strong>Threshold-based</strong
+            ><span>Consistent model classification</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">◇</div>
+
+          <div>
+            <strong>Explainable output</strong
+            ><span>Understand the prediction</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace page-container" id="assessment">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">BORROWER WORKSPACE</div>
+
+            <h2>Loan risk assessment</h2>
+
+            <p>
+              Enter applicant details to generate a model-based risk estimate.
+            </p>
+          </div>
+
+          <span class="step-badge"
+            ><span class="step-dot"></span> New assessment</span
+          >
+        </div>
+
+        <div class="workspace-grid">
+          <section class="form-panel panel reveal">
+            <div class="panel-heading">
+              <div class="heading-icon">01</div>
+
+              <div>
+                <h3>Applicant information</h3>
+
+                <p>Provide the borrower's personal and financial profile.</p>
+              </div>
+            </div>
+
+            <div class="sample-bar">
+              <span>QUICK DEMO</span>
+
+              <button type="button" class="sample-button" data-profile="stable">
+                Stable profile
+              </button>
+
+              <button type="button" class="sample-button" data-profile="young">
+                Young borrower
+              </button>
+
+              <button type="button" class="sample-button" data-profile="risky">
+                Higher-risk profile
+              </button>
+            </div>
+
+            <form id="loanForm">
+              <div class="form-section">
+                <div class="form-section-title">
+                  <span>1</span> Personal & employment
+                </div>
+
+                <div class="form-grid">
+                  <label class="field">
+                    <span>Applicant age</span>
+
+                    <input
+                      name="person_age"
+                      type="number"
+                      min="18"
+                      max="100"
+                      value="35"
+                      required
+                    />
+
+                    <small>Years</small>
+                  </label>
+
+                  <label class="field">
+                    <span>Annual income</span>
+
+                    <div class="input-affix">
+                      <span>₹</span
+                      ><input
+                        name="person_income"
+                        type="number"
+                        min="1"
+                        step="any"
+                        value="900000"
+                        required
+                      />
+                    </div>
+
+                    <small>Gross yearly income</small>
+                  </label>
+
+                  <label class="field">
+                    <span>Home ownership</span>
+
+                    <select name="person_home_ownership" required>
+                      <option value="RENT">Rent</option>
+
+                      <option value="OWN">Own</option>
+
+                      <option value="MORTGAGE">Mortgage</option>
+
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span>Employment length</span>
+
+                    <div class="input-affix">
+                      <input
+                        name="person_emp_length"
+                        type="number"
+                        min="0"
+                        max="100"
+                        step="any"
+                        value="8"
+                        required
+                      /><span>yrs</span>
+                    </div>
+
+                    <small>Years employed</small>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-section-title">
+                  <span>2</span> Loan details
+                </div>
+
+                <div class="form-grid">
+                  <label class="field">
+                    <span>Loan purpose</span>
+
+                    <select name="loan_intent" required>
+                      <option value="PERSONAL">Personal</option>
+
+                      <option value="EDUCATION">Education</option>
+
+                      <option value="MEDICAL">Medical</option>
+
+                      <option value="VENTURE">Business venture</option>
+
+                      <option value="HOMEIMPROVEMENT">Home improvement</option>
+
+                      <option value="DEBTCONSOLIDATION">
+                        Debt consolidation
+                      </option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span>Loan grade</span>
+
+                    <select name="loan_grade" required>
+                      <option value="A">Grade A</option>
+
+                      <option value="B">Grade B</option>
+
+                      <option value="C">Grade C</option>
+
+                      <option value="D">Grade D</option>
+
+                      <option value="E">Grade E</option>
+
+                      <option value="F">Grade F</option>
+
+                      <option value="G">Grade G</option>
+                    </select>
+
+                    <small>Grade from the training dataset</small>
+                  </label>
+
+                  <label class="field">
+                    <span>Loan amount</span>
+
+                    <div class="input-affix">
+                      <span>₹</span
+                      ><input
+                        name="loan_amnt"
+                        type="number"
+                        min="1"
+                        step="any"
+                        value="250000"
+                        required
+                      />
+                    </div>
+                  </label>
+
+                  <label class="field">
+                    <span>Interest rate</span>
+
+                    <div class="input-affix">
+                      <input
+                        name="loan_int_rate"
+                        type="number"
+                        min="0"
+                        max="100"
+                        step="any"
+                        value="10.5"
+                        required
+                      /><span>%</span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="ratio-preview">
+                  <div class="ratio-copy">
+                    <span>Loan-to-income ratio</span>
+
+                    <small>Loan amount divided by annual income</small>
+                  </div>
+
+                  <strong id="ratioPreview">27.8%</strong>
+                </div>
+
+                <input
+                  type="hidden"
+                  name="loan_percent_income"
+                  id="loanPercentIncome"
+                  value="0.278"
+                />
+              </div>
+
+              <div class="form-section">
+                <div class="form-section-title">
+                  <span>3</span> Credit history
+                </div>
+
+                <div class="form-grid">
+                  <label class="field">
+                    <span>Historical default on file</span>
+
+                    <select name="cb_person_default_on_file" required>
+                      <option value="N">No previous default</option>
+
+                      <option value="Y">Previous default recorded</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span>Credit history length</span>
+
+                    <div class="input-affix">
+                      <input
+                        name="cb_person_cred_hist_length"
+                        type="number"
+                        min="0"
+                        max="100"
+                        value="8"
+                        required
+                      /><span>yrs</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-notice">
+                <span>ⓘ</span>
+
+                Use accurate applicant information. Demo values are illustrative
+                and do not guarantee a particular outcome.
+              </div>
+
+              <div id="formError" class="form-error" role="alert" hidden></div>
+
+              <div class="form-actions">
+                <button type="button" id="resetButton" class="button-secondary">
+                  Reset form
+                </button>
+
+                <button type="submit" id="analyzeButton" class="button-primary">
+                  <span class="button-text">Analyze credit risk</span>
+
+                  <span class="button-arrow">↗</span>
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="results-column">
+            <section
+              class="result-panel panel reveal"
+              id="resultPanel"
+              aria-live="polite"
+            >
+              <div class="result-header">
+                <div>
+                  <div class="section-kicker">MODEL OUTPUT</div>
+
+                  <h3>Risk assessment</h3>
+                </div>
+
+                <span class="result-symbol">✳</span>
+              </div>
+
+              <div id="emptyState" class="empty-state">
+                <div class="empty-illustration">
+                  <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="47"
+                      stroke="#dbe5e2"
+                      stroke-width="1.5"
+                      stroke-dasharray="4 5"
+                    />
+
+                    <circle cx="60" cy="60" r="34" fill="#edf5f1" />
+
+                    <path
+                      d="M60 35 81 44v16c0 13-9 21-21 27-12-6-21-14-21-27V44l21-9Z"
+                      stroke="#247557"
+                      stroke-width="2"
+                    />
+
+                    <path
+                      d="m50 60 7 7 14-15"
+                      stroke="#247557"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <h4>Your assessment starts here</h4>
+
+                <p>
+                  Submit the application to see the predicted default
+                  probability, risk classification, and threshold comparison.
+                </p>
+
+                <div class="empty-tip">
+                  <span>✦</span> Tip: Start with a demo profile to explore the
+                  interface.
+                </div>
+              </div>
+
+              <div id="loadingState" class="loading-state" hidden>
+                <div class="loading-ring"></div>
+
+                <h4>Analyzing application</h4>
+
+                <p>Evaluating the supplied applicant features…</p>
+              </div>
+
+              <div id="predictionState" hidden>
+                <div id="riskBadge" class="risk-badge">LOW RISK</div>
+
+                <div class="probability-block">
+                  <span>Predicted default probability</span>
+
+                  <div class="probability-value">
+                    <strong id="probabilityValue">0.00</strong><span>%</span>
+                  </div>
+
+                  <div class="probability-track">
+                    <div id="probabilityBar" class="probability-fill"></div>
+                  </div>
+
+                  <div class="track-labels">
+                    <span>0%</span><span>100%</span>
+                  </div>
+                </div>
+
+                <div class="result-divider"></div>
+
+                <div class="metric-row">
+                  <div>
+                    <span>Classification</span><small>Predicted class</small>
+                  </div>
+
+                  <strong id="classificationValue">0 — Low Risk</strong>
+                </div>
+
+                <div class="metric-row">
+                  <div>
+                    <span>Decision threshold</span
+                    ><small>Saved model threshold</small>
+                  </div>
+
+                  <strong id="thresholdValue">66.71%</strong>
+                </div>
+
+                <div class="metric-row">
+                  <div>
+                    <span>Distance to threshold</span
+                    ><small>Probability minus threshold</small>
+                  </div>
+
+                  <strong id="distanceValue">−65.03 pp</strong>
+                </div>
+
+                <div id="resultSummary" class="result-summary"></div>
+
+                <div class="result-actions">
+                  <button
+                    type="button"
+                    id="newAssessmentButton"
+                    class="button-primary button-full"
+                  >
+                    New assessment <span>↻</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    id="copyResultButton"
+                    class="button-secondary button-full"
+                  >
+                    Copy result
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <section class="insight-panel panel reveal">
+              <div class="insight-heading">
+                <span class="insight-icon">✦</span>
+
+                <div>
+                  <h3>Assessment insights</h3>
+
+                  <p>Practical checks for a better review</p>
+                </div>
+              </div>
+
+              <div id="insightsList" class="insights-list">
+                <div class="insight-item">
+                  <span class="insight-number">01</span>
+
+                  <div>
+                    <strong>Verify applicant details</strong>
+
+                    <p>
+                      Ensure income, employment, and credit history are
+                      accurate.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="insight-item">
+                  <span class="insight-number">02</span>
+
+                  <div>
+                    <strong>Review affordability</strong>
+
+                    <p>Compare the requested loan amount with annual income.</p>
+                  </div>
+                </div>
+
+                <div class="insight-item">
+                  <span class="insight-number">03</span>
+
+                  <div>
+                    <strong>Use the result responsibly</strong>
+
+                    <p>
+                      A model estimate should support, not replace, a full
+                      credit review.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="insight-disclaimer">
+                Insights are screening prompts, not explanations of the model's
+                causal reasoning.
+              </p>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="method-section page-container reveal">
+        <div class="method-heading">
+          <div class="section-kicker">HOW IT WORKS</div>
+
+          <h2>From application to insight</h2>
+
+          <p>
+            A simple workflow powered by your trained machine learning model.
+          </p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <span>01</span>
+
+            <div class="method-icon">▤</div>
+
+            <h3>Capture details</h3>
+
+            <p>Collect applicant, loan, and credit history information.</p>
+          </article>
+
+          <article class="method-card">
+            <span>02</span>
+
+            <div class="method-icon">⌘</div>
+
+            <h3>Evaluate features</h3>
+
+            <p>Send validated features to the trained prediction pipeline.</p>
+          </article>
+
+          <article class="method-card">
+            <span>03</span>
+
+            <div class="method-icon">◉</div>
+
+            <h3>Estimate probability</h3>
+
+            <p>Calculate the model's estimated likelihood of default.</p>
+          </article>
+
+          <article class="method-card">
+            <span>04</span>
+
+            <div class="method-icon">✓</div>
+
+            <h3>Review the result</h3>
+
+            <p>
+              Compare the probability with the configured decision threshold.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main page-container">
+        <a class="brand footer-brand" href="/" aria-label="Credence home">
+          <span class="brand-mark">C</span>
+          <span class="brand-name">credence<span>.</span></span>
+        </a>
+
+        <p class="footer-description">
+          Credit risk intelligence · Machine learning demonstration
+        </p>
+
+        <span class="footer-note">
+          <span class="footer-note-icon" aria-hidden="true">ⓘ</span>
+          Decision support, not financial advice.
+        </span>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="page-container footer-bottom-inner">
+          <p class="copyright">
+            © <span>2026</span> <strong>Uttam Kumar Singh</strong>. All rights
+            reserved.
+          </p>
+          <p class="footer-credit">
+            Designed with <span aria-label="care">♥</span> for smarter credit
+            insights
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
