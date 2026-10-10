@@ -6,3 +6,4 @@ numpy
 scipy
 joblib
 pydantic
+xgboost
